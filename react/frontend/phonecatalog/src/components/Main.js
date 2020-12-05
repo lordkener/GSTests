@@ -1,40 +1,43 @@
 import React, {Component} from 'react';
+import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 import PhoneList from './PhoneList'
+import PhoneDetails from './PhoneDetails'
+import Home from './Home'
 
+const navStyle = {
+  color: 'white'
+}
 class Main extends Component{
-    
+  
     constructor(props) {
         super(props)
-        this.state = { phones: [] }
-      }
-
-    componentDidMount() {
-        fetch('http://localhost:8443/api/', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-          .then((response) => {
-            return response.json()
-          })
-          .then((phones) => {
-            this.setState({ phones: phones })
-            console.log(phones);
-          })
-      }
+    }
 
     render(){
-        if (this.state.phones.length > 0) {
-            return (
-              <div className="container-fluid">
-                <PhoneList catalog={this.state.phones} />
-              </div>
-            )
-          } else {
-            return <p className="text-center">Loading catalog...</p>
-          }
+      return (
+        <Router>
+          <div className="container-fluid">
+          <nav>
+              <h3>Phone catalog</h3>
+              <ul className="nav-links">
+                <Link to='/' style={navStyle}>
+                  <li>Home</li>
+                </Link>
+                <Link to='/phones' style={navStyle}>
+                  <li>Catalog</li>
+                </Link>
+              </ul>
+          </nav>
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/phones" exact component={PhoneList} />
+              <Route path="/phones/:id" component={PhoneDetails} />
+            </Switch>
+          </div>
+        </Router>
+      )
+          
     }
 }
 export default Main;

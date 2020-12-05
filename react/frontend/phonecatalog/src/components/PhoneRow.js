@@ -1,5 +1,6 @@
 import React from 'react'
 import PhoneImage from './PhoneImage'
+import {Link} from 'react-router-dom'
 
 class PhoneRow extends React.Component {
 
@@ -16,8 +17,9 @@ class PhoneRow extends React.Component {
           <p>
             {this.props.price} € &nbsp;
           </p>
+          <Link to={`/phones/${this.props.id}`}>+ More info.</Link>
         </div>
-        <hr/>
+        <hr width='50%'/>
       </div>
     )
   }
