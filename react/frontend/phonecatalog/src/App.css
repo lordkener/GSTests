@@ -19,3 +19,29 @@ nav {
   list-style: none;
   color: white;
 }
+
+.header{
+  display: flex;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+tbody {
+  text-align: left;
+  display: table;
+  width: 100%;
+}
+
+td {
+  border-bottom: 3px solid rgb(216, 216, 216);
+}
+
+.bordered-right {
+  width: 30%;
+  border-right: 1px solid rgb(216, 216, 216);
+}
+
+.right-side {
+  text-align: center;
+}
+

@@ -1,6 +1,6 @@
 import React from 'react'
 import PhoneImage from './PhoneImage'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class PhoneRow extends React.Component {
 
@@ -11,7 +11,7 @@ class PhoneRow extends React.Component {
   render() {
     return(
       <div className="media">
-        <PhoneImage imageSrc={'http://localhost:8443/api/phones/' + this.props.id + '/image'} />
+        <PhoneImage imageSrc={'http://localhost:8443/api/phones/' + this.props.id + '/image'} imageSize={`124px`}/>
         <div className="media-body">
           <h4>{this.props.name}</h4>
           <p>
