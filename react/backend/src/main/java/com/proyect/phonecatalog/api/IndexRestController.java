@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,11 +28,10 @@ public class IndexRestController {
 	@Autowired
 	private PhoneService phoneService;
 
-	// RECENT USERS PUBLICATIONS (AS ANNONYMOUS)
 	@JsonView(IndexRestController.Main.class)
 	@GetMapping("/")
-	public ResponseEntity<List<Phone>> getPhoneCatalog() {
-		List<Phone> phonesList = phoneService.getAllPhones();
+	public ResponseEntity<List<Phone>> getPhoneCatalog(@RequestParam int page, @RequestParam int size) {
+		List<Phone> phonesList = phoneService.getAllPhones(page, size);
 		if (phonesList != null) {
 			return new ResponseEntity<>(phonesList, HttpStatus.OK);
 		} else {

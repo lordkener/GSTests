@@ -6,7 +6,7 @@ class PhoneDetails extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = { phone: {} }
+    this.state = { phone: {}, isLoaded: false }
   }
 
   componentDidMount() {
@@ -20,12 +20,13 @@ class PhoneDetails extends React.Component {
         return response.json()
       })
       .then((data) => {
-        this.setState({ phone: data })
+        this.setState({ phone: data, isLoaded: true })
         console.log(data);
       })
   }
 
   render() {   
+    if(this.state.isLoaded){
     return (
       <div className="header">
         <div style={{"height":"fit-content", "width": "fit-content"}}>
@@ -71,6 +72,9 @@ class PhoneDetails extends React.Component {
         </div>
       </div>
     )
+    }else{
+      return(<p className="text-center">Loading phone...</p>)
+    }
   }
 }
 
