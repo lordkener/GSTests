@@ -31,7 +31,7 @@ class PhoneDetails extends React.Component {
         <div style={{"height":"fit-content", "width": "fit-content"}}>
           <Link to='/phones'>
             <h6 style={{"color": "black"}}>
-              &#60; Back
+              &#60;Back
             </h6>
           </Link>
         </div>
