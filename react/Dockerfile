@@ -14,7 +14,7 @@ RUN mvn clean verify
 FROM openjdk:14-jdk-alpine
 COPY --from=backend /backend/target/phonecatalog-0.0.1-SNAPSHOT.jar ./app.jar
 COPY backend/src/main/resources/static src/main/resources/static
-EXPOSE 8443 3306
+EXPOSE 8080 3306
 RUN adduser -D user
 USER user
-CMD ["sh", "-c", "java -Djava.security.egd=file:/dev/./urandom -jar app.jar"]
+CMD ["sh", "-c", "java -Dserver.port=$PORT -Djava.security.egd=file:/dev/./urandom -jar app.jar"]

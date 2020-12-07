@@ -7,7 +7,7 @@ class PhoneRow extends React.Component {
   render() {
     return(
       <div className="media">
-        <PhoneImage imageSrc={'http://localhost:8443/api/phones/' + this.props.id + '/image'} imageSize={`124px`}/>
+        <PhoneImage imageSrc={'https://app-phone-catalog.herokuapp.com/api/phones/' + this.props.id + '/image'} imageSize={`124px`}/>
         <div className="media-body">
           <h4>{this.props.name}</h4>
           <p>

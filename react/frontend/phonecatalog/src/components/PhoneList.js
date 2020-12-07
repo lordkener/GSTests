@@ -17,7 +17,7 @@ class PhoneList extends React.Component {
 
   loadMorePhones() {
     this.setState({ isLoaded: false })
-    fetch('http://localhost:8443/api/?page=0&size=' + this.state.page_size, {
+    fetch('https://app-phone-catalog.herokuapp.com/api/?page=0&size=' + this.state.page_size, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'

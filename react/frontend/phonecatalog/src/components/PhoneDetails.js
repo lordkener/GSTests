@@ -10,7 +10,7 @@ class PhoneDetails extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8443/api/phones/${this.props.match.params.id}`, {
+    fetch(`https://app-phone-catalog.herokuapp.com/api/phones/${this.props.match.params.id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ class PhoneDetails extends React.Component {
           </Link>
         </div>
         <div className="media">
-          <PhoneImage imageSrc={'http://localhost:8443/api/phones/' + this.state.phone.id + '/image'} imageSize={`186px`} />
+          <PhoneImage imageSrc={'https://app-phone-catalog.herokuapp.com/api/phones/' + this.state.phone.id + '/image'} imageSize={`186px`} />
           <div className="media-body">
             <h4>{this.state.phone.name}</h4>
             <p>
