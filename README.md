@@ -22,7 +22,7 @@ Phonecatalog is the web application where you can view a catalog of phones, and 
 
   #### Desktop web page 
   <p align="center">
-   <img src="https://github.com/lordkener/GSTests/blob/main/Images/desktop_web_page.gif" width="75%">
+   <img src="https://github.com/lordkener/GSTests/blob/main/Images/desktop_web_page.gif">
   </p> 
   
   #### Mobile web page
