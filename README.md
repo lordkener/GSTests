@@ -58,15 +58,17 @@ Also you can look the rows created in the database straight the way.
     > npm run-scripts start
 
 ### Easy run mode, with Docker
+
+NOTE: Be carefull to not bussy 8443 and 3000 ports.
+
 - To run both REST API and REACT APP easier, just make sure you have Docker installed in your system.
+- Pull the project running this command:
+    > docker pull lordkener/phonecatalog-app
 - Go inside "react"'s folder
-- Then you only need to edit the "docker-compose.yml" file, modify "lordkener/phonecatalog-app:latest", and call it what ever you want. For example: phonecatalog-app.
 - Open a terminal in that path and run this command:
     > docker-compose up
 
-This will install the MySQL, REST API and REACT APP images and execute them in a container. To see what is working, navigate to http://localhost:3000/
-
-Only be carefull to not bussy 8443 and 3000 ports.
+This will install the MySQL, REST API and REACT APP images and execute them in a container. To see that is working, open http://localhost:8443/ in any browser.
 
 ### Heroku branch
 To see the app, you can visit it from Heroku web page: https://app-phone-catalog.herokuapp.com/
